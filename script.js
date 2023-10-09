@@ -7,6 +7,23 @@ const buttonStop = document.querySelector('.stop')
 const buttonSet = document.querySelector('.set')
 const buttonSoundOn = document.querySelector('.sound-on')
 const buttonSoundOff = document.querySelector('.sound-off')
+let minutes 
+const minutesDisplay = document.querySelector('.minutes')
+const secondsDisplay = document.querySelector('.seconds')
+
+function countdown(){
+    setTimeout(function(){
+        let seconds = Number(secondsDisplay.textContent)
+
+        if ( seconds <= 0){
+            seconds = 60
+        }
+
+        secondsDisplay.textContent = seconds -1
+
+        countdown()
+    }, 1000)
+}
 
 // Event-driven
 // Callback
@@ -15,6 +32,8 @@ buttonPlay.addEventListener('click', function() {
     buttonPause.classList.remove('hide')
     buttonSet.classList.add('hide')
     buttonStop.classList.remove('hide')
+    
+    countdown()
 })
 
 buttonPause.addEventListener('click', function() {
@@ -39,4 +58,9 @@ buttonSoundOn.addEventListener('click', function(){
     buttonSoundOff.classList.remove('hide')
     buttonSoundOn.classList.add('hide')
 
+})
+
+buttonSet.addEventListener('click', function(){
+    minutes = prompt('Quantos minutos?')
+    minutesDisplay.textContent = minutes
 })
