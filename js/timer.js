@@ -1,3 +1,5 @@
+import resetControls from "./controls"
+
 function updateTimerDisplay(minutes, seconds) {
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
     secondsDisplay.textContent = String(seconds).padStart(2, "0")
@@ -30,3 +32,5 @@ function countdown(){
         countdown()
     }, 1000)
 }
+//Named Export
+export {}

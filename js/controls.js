@@ -5,4 +5,6 @@ function resetControls() {
     buttonStop.classList.add('hide')
 }
 
+
+//Default Export
 export default resetControls

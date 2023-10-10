@@ -1,7 +1,10 @@
 // ES6 Modules
 
+// Default Import
 import  resetControls from "./controls.js"
-import  "./timer.js"
+
+// Named Import
+import  {countdown, resetTimer} from"./timer.js"
 
 
 const buttonPlay = document.querySelector('.play')
@@ -21,7 +24,7 @@ buttonPlay.addEventListener('click', function() {
     buttonSet.classList.add('hide')
     buttonStop.classList.remove('hide')
 
-    countdown()
+    countdown(secondsDisplay, minutesDisplay, resetControls)
 })
 
 buttonPause.addEventListener('click', function() {
